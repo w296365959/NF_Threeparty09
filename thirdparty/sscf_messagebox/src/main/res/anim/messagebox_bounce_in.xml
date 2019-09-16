@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 活动类型的 message box 进入动画-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true"
+    >
+    <scale
+        android:duration="280"
+        android:fillAfter="true"
+        android:fromXScale="0"
+        android:fromYScale="0"
+        android:interpolator="@android:anim/decelerate_interpolator"
+        android:pivotX="50%p"
+        android:pivotY="50%"
+        android:toXScale="1.15"
+        android:toYScale="1.15" />
+
+    <scale
+        android:duration="100"
+        android:fillAfter="true"
+        android:fromXScale="1.15"
+        android:fromYScale="1.15"
+        android:pivotX="50%p"
+        android:pivotY="50%"
+        android:startOffset="280"
+        android:toXScale="0.8"
+        android:toYScale="0.8" />
+
+    <scale
+        android:duration="100"
+        android:fillAfter="true"
+        android:fromXScale="0.8"
+        android:fromYScale="0.8"
+        android:pivotX="50%p"
+        android:pivotY="50%"
+        android:startOffset="380"
+        android:toXScale="1.05"
+        android:toYScale="1.05" />
+
+    <scale
+        android:duration="100"
+        android:fromXScale="1.05"
+        android:fromYScale="1.05"
+        android:pivotX="50%p"
+        android:pivotY="50%"
+        android:startOffset="480"
+        android:toXScale="1"
+        android:toYScale="1" />
+</set>

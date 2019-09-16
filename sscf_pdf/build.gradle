@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+//apply plugin: 'replugin-plugin-gradle'
+
+android {
+    defaultConfig {
+        applicationId "com.sscf.investment.pdf"
+        multiDexEnabled false
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+
+//    defaultConfig {
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                // 每个使用Router的module都要配置该参数
+//                arguments = ["moduleName": project.name]
+//            }
+//        }
+//    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies.android_pdf_viewer
+}
+
+//apply from: '../../gradles/maven-publish-aar.gradle'

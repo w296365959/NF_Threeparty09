@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+
+android {
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        androidTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+}
+
+dependencies {
+    //PushSDK必须依赖基础组件库，所以需要加入对应依赖
+    api(rootProject.ext.dependencies.push_common)
+    //PushSDK必须依赖utdid库，所以需要加入对应依赖
+    api(rootProject.ext.dependencies.push_utdid)
+    //PushSDK
+    api rootProject.ext.dependencies.push_sdk
+    //小米Push通道
+    api rootProject.ext.dependencies.push_xiaomi
+    //华为Push通道
+    api rootProject.ext.dependencies.push_huawei
+    //魅族Push通道
+    api rootProject.ext.dependencies.push_meizu
+
+    //oppo 推送jar包
+    api files('libs/com.coloros.mcssdk.jar')
+
+    api fileTree(include: ['*.jar'], dir: 'libs')
+}
+
+apply from: '../../gradles/maven-publish-aar.gradle'
+
+

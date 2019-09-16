@@ -1,0 +1,71 @@
+// 多项目配置参数配置
+subprojects {
+    project.afterEvaluate {
+        if (hasAndroidPlugin(project)) {
+            println "配置：${project.name} " + rootProject.ext.android.compileSdkVersion + " " + rootProject.ext.android.buildToolsVersion
+
+            android {
+                compileSdkVersion rootProject.ext.android.compileSdkVersion
+                buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+                defaultConfig {
+                    minSdkVersion rootProject.ext.android.minSdkVersion
+                    targetSdkVersion rootProject.ext.android.targetSdkVersion
+                    versionCode rootProject.ext.android.versionCode
+                    versionName rootProject.ext.android.versionName
+//                    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+                    javaCompileOptions {
+                        annotationProcessorOptions {
+                            includeCompileClasspath false
+                        }
+                    }
+                }
+
+                compileOptions {
+                    sourceCompatibility rootProject.ext.sourceCompatibility
+                    targetCompatibility rootProject.ext.targetCompatibility
+                }
+
+                buildTypes {
+                    debug {
+                        debuggable true
+                        minifyEnabled false
+                        buildConfigField "boolean", "ENABLE_DEBUG", "true"
+                    }
+
+                    release {
+                        debuggable false
+                        minifyEnabled false
+                        buildConfigField "boolean", "ENABLE_DEBUG", "true"
+                    }
+
+                    // 外部统一引用包位置
+                    repositories {
+                        flatDir {
+                            dirs '../libs'
+                        }
+                    }
+                }
+
+                lintOptions {
+                    checkReleaseBuilds false
+                    abortOnError false
+                }
+            }
+
+            configurations.all {
+                resolutionStrategy {
+                    force "com.android.support:appcompat-v7:${dependVersion.support}"
+                }
+            }
+        }
+    }
+}
+
+static boolean hasAndroidPlugin(Project project) {
+    project.plugins.hasPlugin('com.android.library') || hasAndroidApplicationPlugin(project)
+}
+
+static boolean hasAndroidApplicationPlugin(Project project) {
+    project.plugins.hasPlugin('com.android.application')
+}

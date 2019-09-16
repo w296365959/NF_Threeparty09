@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies.support_v7
+    implementation 'com.google.zxing:core:3.3.3'
+}
+
+build.doLast {
+    copy{
+        from('build/outputs/aar/')
+        into('build/outputs/aar/')
+        include('component_scan-release.aar')
+        rename('component_scan-release.aar', 'dt_component_scan' + '.aar')
+    }
+}
+
+apply from: '../../gradles/maven-publish-aar.gradle'

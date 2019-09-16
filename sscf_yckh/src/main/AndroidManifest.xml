@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cn.com.yichuang.sdk"
+    android:versionCode="1"
+    android:versionName="1.0"
+    tools:ignore="ProtectedPermissions">
+    <!-- 提高App所支持的最大屏幕纵横比，针对高屏占比手机配置 -->
+    <meta-data
+        android:name="android.max_aspect"
+        android:value="2.3" /> <!-- 协议申明插件别名 -->
+    <meta-data
+        android:name="com.qihoo360.plugin.name"
+        android:value="YICHUANGSDK" />
+    <meta-data
+        android:name="com.qihoo360.plugin.version.ver"
+        android:value="2" /> <!-- 协议申明插件版本号，Replugin要求 low 和 high 保持一致 -->
+    <meta-data
+        android:name="com.qihoo360.plugin.version.low"
+        android:value="100" />
+    <meta-data
+        android:name="com.qihoo360.plugin.version.high"
+        android:value="100" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:name=".OpenAccountApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="一创开户"
+        android:theme="@style/Theme.AppCompat.Light">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

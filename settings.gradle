@@ -1,0 +1,31 @@
+include ':app', ':sscf_dbkh'
+
+include ':sscf_pdf'
+include ':sscf_scan_zbar'
+include ':umeng_push_sdk'
+include ':DragSortListview'
+include ':sscf_scan'
+//include ':sscf_yckh'
+include ':sscf_hxkh'
+include ':sscf_anychat'
+include ':sscf_alipay'
+include ':sscf_messagebox'
+include ':sscf_x5_webkit'
+include ':sscf_taskpoll'
+include ':sscf_calendarview'
+include ':sscf_jsproxy'
+include ':delegateadapter'
+
+// thirdparty 第三方库
+project(':umeng_push_sdk').projectDir = new File("thirdparty/umeng_push_sdk")
+project(':DragSortListview').projectDir = new File("thirdparty/DragSortListview")
+project(':sscf_scan_zbar').projectDir = new File('thirdparty/sscf_scan_zbar')
+project(':sscf_scan').projectDir = new File("thirdparty/sscf_scan")
+project(':sscf_anychat').projectDir = new File("thirdparty/sscf_anychat")
+project(':sscf_alipay').projectDir = new File("thirdparty/sscf_alipay")
+project(':sscf_messagebox').projectDir = new File("thirdparty/sscf_messagebox")
+project(':sscf_x5_webkit').projectDir = new File("thirdparty/sscf_x5_webkit")
+project(':sscf_taskpoll').projectDir = new File("thirdparty/sscf_taskpoll")
+project(':sscf_calendarview').projectDir = new File("thirdparty/sscf_calendarview")
+project(':sscf_jsproxy').projectDir = new File("thirdparty/sscf_jsproxy")
+project(':delegateadapter').projectDir = new File("thirdparty/delegateadapter")

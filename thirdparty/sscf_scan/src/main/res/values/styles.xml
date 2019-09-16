@@ -1,0 +1,7 @@
+<resources>
+<style name="null_bg_style" parent="@android:style/Theme.NoTitleBar">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:background">@null</item>
+</style>
+</resources>

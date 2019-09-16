@@ -1,0 +1,155 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="MessageBox" />
+
+    <style name="MessageBox.Full_Screen" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:background">@null</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <!--纯白色内容背景-->
+    <style name="MessageBox.Title">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!--纯白色内容背景-->
+    <style name="MessageBox.Subtitle">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MessageBox.Body">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- 弹层背景 -->
+    <style name="MessageBox.Bg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 弹层背景 -->
+    <style name="MessageBox.Bg.Full">
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!-- 弹层标题栏样式 -->
+    <style name="MessageBox.Title.Text_Title_Dialog">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/messagebox_text_color</item>
+    </style>
+
+    <!-- 弹层标题栏样式 -->
+    <style name="MessageBox.Subtitle.Text_Title_Dialog">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/messagebox_text_color</item>
+    </style>
+
+    <!-- 弹层内容提示样式 -->
+    <style name="MessageBox.Body.Text_Body_Dialog">
+        <item name="android:textColor">#333333</item>
+    </style>
+
+    <!-- 弹层底部按钮栏背景样式 -->
+    <style name="MessageBox.bottom_btn_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+
+    <!-- 灰色色按钮样式 -->
+    <style name="MessageBox.button_white_cancel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:minWidth">100dip</item>
+        <item name="android:textColor">@color/messagebox_txt_disable</item>
+        <item name="android:background">@drawable/messagebox_button_white_noboder</item>
+        <item name="android:textSize">@dimen/messagebox_btn_text_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_marginTop">0.1dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 灰色色按钮样式 -->
+    <style name="MessageBox.button_white_ok">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:minWidth">100dip</item>
+        <item name="android:textColor">@color/messagebox_txt_enable</item>
+        <item name="android:background">@drawable/messagebox_button_white_noboder</item>
+        <item name="android:textSize">@dimen/messagebox_btn_text_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_marginTop">0.1dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="MessageBox.button_white">
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/button_messagebox_white</item>
+        <item name="android:textColor">#ff252525</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="MessageBox.button_black">
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/button_messagebox_black</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="MessageBox.LandLine">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/messagebox_divider_color</item>
+    </style>
+
+    <style name="MessageBox.VectorLine">
+        <item name="android:layout_width">0.5dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@color/messagebox_divider_color</item>
+    </style>
+
+    <style name="MessageBox.Animations" />
+
+    <style name="MessageBox.Animations.Dialog_Center">
+        <item name="@android:windowEnterAnimation">@anim/messagebox_modal_in</item>
+        <item name="@android:windowExitAnimation">@anim/messagebox_modal_out</item>
+    </style>
+
+    <style name="MessageBox.Animations.Dialog_Bottom">
+        <item name="@android:windowEnterAnimation">@anim/messagebox_in_from_bottom</item>
+        <item name="@android:windowExitAnimation">@anim/messagebox_out_to_bottom</item>
+    </style>
+
+    <style name="MessageBox.Animations.Dialog_Top">
+        <item name="@android:windowEnterAnimation">@anim/messagebox_top_in</item>
+        <item name="@android:windowExitAnimation">@anim/messagebox_top_out</item>
+    </style>
+
+    <style name="MessageBox.Animations.Dialog_Fade">
+        <item name="@android:windowEnterAnimation">@anim/messagebox_fade_in</item>
+        <item name="@android:windowExitAnimation">@anim/messagebox_fade_out</item>
+    </style>
+
+    <style name="MessageBox.Animations.Dialog_Bounce">
+        <item name="@android:windowEnterAnimation">@anim/messagebox_bounce_in</item>
+        <item name="@android:windowExitAnimation">@anim/messagebox_bounce_out</item>
+    </style>
+
+    <style name="MessageBox.Animations.Dialog_Fade_Offset">
+        <item name="@android:windowEnterAnimation">@anim/messagebox_fade_offset_in</item>
+        <item name="@android:windowExitAnimation">@anim/messagebox_fade_offset_out</item>
+    </style>
+</resources>

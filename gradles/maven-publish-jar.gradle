@@ -1,0 +1,64 @@
+// java-artifacts.gradle
+
+apply plugin: 'maven-publish'
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
+// 读取配置信息
+ext {
+    // 读取配置信息
+    File propFile = file("maven_publish.properties")
+    Properties properties = new Properties()
+    if (propFile.exists()) {
+        properties.load(propFile.newDataInputStream())
+    }
+    artifact_Id = properties.getProperty('POM_ARTIFACT_ID')
+    version_name = properties.getProperty('POM_VERSIONNAME')
+    desc = properties.getProperty("POM_DESC")
+    group_id = properties.getProperty("POM_GROUP_ID")
+}
+
+
+// 判断版本是Release or Snapshots
+def isReleaseBuild() {
+    return !("${version_name}".contains("SNAPSHOT"))
+}
+
+afterEvaluate { project ->
+    tasks.all { Task task ->
+        if (task.name.equalsIgnoreCase('publishPatchLibPublicationToMavenLocal')) {
+            task.dependsOn tasks.getByName('assemble')
+        }
+    }
+}
+
+publishing {
+    publications {
+        PatchLib(MavenPublication) {
+            from components.java
+            groupId = group_id
+            artifactId = artifact_Id
+            version = version_name
+        }
+    }
+}
+
+publishing {
+    repositories {
+        //指定项目部署到的中央库地址，UserName和Password就是Part 1中注册的账号。
+        if (!isReleaseBuild()) {
+            maven {
+                url SNAPSHOT_REPOSITORY_URL
+            }
+        } else {
+            maven {
+                url RELEASE_REPOSITORY_URL
+                credentials {
+                    username = USERNAME
+                    password = PASSWORD
+                }
+            }
+        }
+    }
+}

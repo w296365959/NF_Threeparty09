@@ -1,0 +1,171 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/null_bg_style">
+
+    <SurfaceView
+        android:id="@+id/preview_view"
+        style="@style/null_bg_style" />
+
+    <FrameLayout
+        android:id="@+id/import_stock_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="79dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.sscf.investment.scan.view.ViewfinderView
+            android:id="@+id/viewfinder_view"
+            style="@style/null_bg_style"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="106dp"
+            android:text="@string/take_picture_tips"
+            android:textColor="#fff"
+            android:textSize="14dp" />
+
+        <View
+            android:id="@+id/takePictureButton"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/scan_take_picture_icon_selector" />
+
+        <View
+            android:id="@+id/gallaryButton"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="58dp"
+            android:layout_marginBottom="38dp"
+            android:background="@drawable/scan_gallary_icon" />
+    </FrameLayout>
+
+    <com.sscf.investment.scan.view.ScanCoverView
+        android:id="@+id/scan_cover_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="79dp"
+        android:background="#88000000"
+        android:visibility="visible"
+        app:scanViewId="@+id/scan_center_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="106dp"
+                android:text="将二维码放入框内，即可自动扫描"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+            <FrameLayout
+                android:id="@+id/scan_center_layout"
+                android:layout_width="260dp"
+                android:layout_height="260dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="26dp">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|top"
+                    app:srcCompat="@drawable/ic_scan_rect_top_left" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|top"
+                    app:srcCompat="@drawable/ic_scan_rect_top_right" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    app:srcCompat="@drawable/ic_scan_rect_bottom_left" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    app:srcCompat="@drawable/ic_scan_rect_bottom_right" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/center_scan_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_scan_rect_center" />
+            </FrameLayout>
+        </LinearLayout>
+    </com.sscf.investment.scan.view.ScanCoverView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_gravity="bottom"
+        android:background="#aa000000"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/bottom_qr_code_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                app:srcCompat="@drawable/scan_bottom_qr_code_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:duplicateParentState="true"
+                android:text="扫码识别"
+                android:textColor="@color/scan_bottom_text_selector"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_import_stock_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                app:srcCompat="@drawable/scan_bottom_import_stock_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:duplicateParentState="true"
+                android:text="导入股票"
+                android:textColor="@color/scan_bottom_text_selector"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

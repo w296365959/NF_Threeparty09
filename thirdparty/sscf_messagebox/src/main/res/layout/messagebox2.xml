@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 全屏消息对话框 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MessageBox.Bg.Full">
+
+    <LinearLayout
+        android:id="@+id/contentPannel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/messagebox_bg_boxtop"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/title_name"
+                style="@style/MessageBox.Title.Text_Title_Dialog"
+                android:layout_gravity="center_vertical"
+                android:text="标题" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialogContent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/contentLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <TextView
+                    android:id="@+id/boldText"
+                    style="@style/MessageBox.Body.Text_Body_Dialog"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="我是一个消息" />
+            </FrameLayout>
+
+            <!-- 分隔线 -->
+            <View
+                android:id="@+id/bottomDivider"
+                style="@style/MessageBox.LandLine" />
+
+            <LinearLayout
+                android:id="@+id/bottombar"
+                style="@style/MessageBox.bottom_btn_layout"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

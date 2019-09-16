@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="messagebox_tips_bg">#CC000000</color>
+
+    <color name="messagebox_title_bg">#FFFFFF</color>
+
+    <color name="messagebox_text_color">#FFFFFF</color>
+
+    <color name="messagebox_divider_color">#C8E1E2E3</color>
+
+    <color name="messagebox_txt_disable">#666666</color>
+
+    <color name="messagebox_txt_enable">#079cda</color>
+
+    <color name="messagebox_textcolor_black">#000000</color>
+
+    <color name="messagebox_textcolor_gray">#666666</color>
+
+    <color name="messagebox_inputtext_bg">#00000000</color>
+
+    <color name="messagebox_btn_white_bg">#fff</color>
+    <color name="messagebox_btn_gray_bg">#C8E1E2E3</color>
+</resources>

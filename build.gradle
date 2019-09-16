@@ -1,0 +1,25 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+apply from: 'gradles/denpendencies.gradle'
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+
+        dependencies {
+            // 由于RePlugin插件的问题，暂时降级未3.1.4，目前RePlugin官网已经fix了这个问题，但是暂还未发布版本
+            classpath 'com.android.tools.build:gradle:3.2.0'
+            classpath 'me.tatarka:gradle-retrolambda:3.3.0'
+
+            // RePlugin 插件化方案
+            classpath 'com.qihoo360.replugin:replugin-plugin-gradle:2.3.2'
+        }
+    }
+}
+
+// 加载参数配置文件
+apply from: 'gradles/config.gradle'
+
+// 多项目配置
+apply from: 'gradles/buildConfig.gradle'

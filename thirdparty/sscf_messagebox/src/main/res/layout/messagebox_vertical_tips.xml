@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dlgContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cc000000"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/titleIcon"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/messagebox_fail"/>
+
+    <LinearLayout android:id="@+id/contentPannel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginBottom="22dp">
+
+        <TextView
+            android:id="@+id/titleMessage"
+            style="@style/MessageBox.Title.Text_Title_Dialog"
+            android:text="提示标题"/>
+
+        <com.sscf.investment.messagebox.widgets.CenterTextView
+            android:id="@+id/subMessage"
+            style="@style/MessageBox.Subtitle.Text_Title_Dialog"
+            android:text="提示副标题信息"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
+</LinearLayout>

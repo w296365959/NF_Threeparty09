@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 消息类型的 message box 退出动画-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="@android:integer/config_shortAnimTime"
+    android:interpolator="@android:anim/accelerate_interpolator"
+    android:shareInterpolator="true"
+    >
+    <translate
+        android:fromYDelta="0"
+        android:toYDelta="-10%"
+        android:startOffset="1"
+        />
+    <alpha
+        android:fromAlpha="1"
+        android:toAlpha="0" />
+</set>

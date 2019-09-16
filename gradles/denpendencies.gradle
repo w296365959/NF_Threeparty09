@@ -1,0 +1,27 @@
+// 统一配置项目中的仓库配置
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+
+        maven {
+            url "http://dl.bintray.com/dodola/maven"
+        }
+
+        maven {
+            url "https://jitpack.io"
+        }
+
+        // 私有仓库
+        maven {
+            url "http://47.99.136.159:8081/nexus/content/repositories/sscf"
+        }
+
+        // 本地仓库
+        maven {
+            url "../repo"
+        }
+    }
+}

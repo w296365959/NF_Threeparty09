@@ -1,0 +1,13 @@
+apply plugin: 'com.android.library'
+
+dependencies {
+    implementation rootProject.ext.dependencies.support_v4
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.dependencies.support_v7
+    implementation rootProject.ext.dependencies.recyclerview
+}
+
+apply from: '../../gradles/maven-publish-aar.gradle'

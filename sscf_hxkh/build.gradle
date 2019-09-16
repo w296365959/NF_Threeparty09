@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+//apply plugin: 'replugin-plugin-gradle'
+
+android {
+    defaultConfig {
+        applicationId "com.hx.android"
+        multiDexEnabled false
+        versionCode 1
+        versionName "1.0"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+// 这个plugin需要放在android配置之后，因为需要读取android中的配置项
+apply plugin: 'replugin-plugin-gradle'
+
+repluginPluginConfig {
+    pluginName = "HXKHSDK"
+    hostApplicationId = "com.sscf.investment"
+    hostAppLauncherActivity = "com.sscf.investment.main.MainActivity"
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:22.2.0'
+    // 华西证券
+    api files('libs/thinkive-framework-2.0.3.jar')
+    api files('libs/httpcore-4.3.2.jar')
+    api files('libs/volley-1.0.jar')
+    api files('libs/httpmime-4.3.5.jar')
+    api files('libs/bcprov-ext-jdk15on-151.jar')
+    api files('libs/BaiduLBS_Android.jar')
+    api files('libs/anychat_org.jar')
+
+    api (name: 'kh-3.9-20181009', ext: 'aar')
+    api (name: 'idscanerlibrary', ext: 'aar')
+    api (name: 'thinkive-fxc-openbase-1.1.2', ext: 'aar')
+
+    // 替换为标准的Gson引用
+    implementation 'com.google.code.gson:gson:2.7'
+
+    api 'com.qihoo360.replugin:replugin-plugin-lib:2.3.2'
+    api 'com.android.support:multidex:1.0.3'
+}
+
+//apply from: '../gradles/maven-publish-aar.gradle'
+
+

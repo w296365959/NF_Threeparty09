@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:text="透明弹窗"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:text="消息内容弹框"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:text="圆角无按钮，无标题"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:text="圆角无按钮，有标题"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:text="圆角无按钮，有标题，自定义内容"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:text="自定义内容弹框"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:text="轻量线程池"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:text="轻量线程池 - 序列"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:text="轻量线程池 - 序列"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ScanTest"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="145dp" />
+    <Button
+        android:id="@+id/calendar_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="calendarView"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="145dp"/>
+</LinearLayout>

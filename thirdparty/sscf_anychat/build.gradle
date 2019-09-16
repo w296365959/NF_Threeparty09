@@ -1,0 +1,16 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies.support_v7
+}
+
+apply from: '../../gradles/maven-publish-aar.gradle'

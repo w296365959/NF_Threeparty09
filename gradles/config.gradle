@@ -1,0 +1,74 @@
+import java.text.SimpleDateFormat
+
+// 全局配置参数
+ext {
+
+    // 发布部署仓库地址
+    RELEASE_REPOSITORY_URL='http://47.99.136.159:8081/nexus/content/repositories/sscf'
+    SNAPSHOT_REPOSITORY_URL='../repo'
+
+    // maven 仓库账号
+    USERNAME = 'deployment'
+    PASSWORD = 'WUOIBo0W'
+
+    // 编译版本信息配置
+    android = [
+            compileSdkVersion         : 28,
+            buildToolsVersion         : "28.0.3",
+            minSdkVersion             : 16,
+            targetSdkVersion          : 26,
+
+            versionCode               : buildVersionCode(),
+            versionName               : buildVersionName()
+    ]
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    // 主入口APP版本
+    appId = "thirdparty.sscf.com.thirdtest"
+
+    // 配置依赖库版本
+    dependVersion = [
+            support       : "28.0.0",
+            kotlin_version: '1.2.30'
+    ]
+
+    // 配置项目依赖表
+    dependencies = [
+            //support
+            "support_v4"                  : "com.android.support:support-v4:${dependVersion.support}",
+            "support_v7"                  : "com.android.support:appcompat-v7:${dependVersion.support}",
+            "support-v13"                 : "com.android.support:support-v13:${dependVersion.support}",
+            "desigin"                     : "com.android.support:design:${dependVersion.support}",
+            "recyclerview"                : "com.android.support:recyclerview-v7:${dependVersion.support}",
+            "cardview"                    : "com.android.support:cardview-v7:${dependVersion.support}",
+            "support_annotations"         : "com.android.support:support-annotations:${dependVersion.support}",
+            "multidex"                    : 'com.android.support:multidex:1.0.2',
+
+            // 推送
+            "push_common"                 : [group: 'com.umeng.sdk', name: 'common', version: '1.5.3'],
+            "push_utdid"                  : [group: 'com.umeng.sdk', name: 'utdid', version: '1.1.5.3'],
+            "push_sdk"                    : [group: 'com.umeng.sdk', name: 'push', version: '4.2.0'],
+            "push_xiaomi"                 : [group: 'com.umeng.sdk', name: 'push-xiaomi', version: '1.0.0'],
+            "push_huawei"                 : [group: 'com.umeng.sdk', name: 'push-huawei', version: '1.0.0'],
+            "push_meizu"                  : [group: 'com.umeng.sdk', name: 'push-meizu', version: '1.0.0'],
+
+            // pdf
+            "android_pdf_viewer"          : [group: 'com.github.barteksc', name: 'android-pdf-viewer', version: '2.7.0-beta.1'],
+            "constraint_layout"           : [group: 'com.android.support.constraint', name: 'constraint-layout', version: '1.0.2'],
+
+            'rxandroid'                   : 'io.reactivex.rxjava2:rxandroid:2.0.1',
+            'rxjava'                      : 'io.reactivex.rxjava2:rxjava:2.1.5',
+    ]
+}
+
+int buildVersionCode() {
+    def df = new SimpleDateFormat("MMddHH")
+    df.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"))
+    return Integer.parseInt(buildVersionName().replace(".", "") + df.format(new Date()))
+}
+
+String buildVersionName() {
+    return "2.0.0"
+}

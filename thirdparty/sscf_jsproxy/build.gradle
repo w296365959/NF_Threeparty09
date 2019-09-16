@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+
+android {
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.dependencies.support_v7
+    implementation 'com.alibaba:fastjson:1.2.56'
+}
+
+apply from: '../../gradles/maven-publish-aar.gradle'
+
